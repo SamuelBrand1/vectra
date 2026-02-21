@@ -29,17 +29,21 @@ typedef struct {
  * @brief Epidemiological parameters for BTV transmission and disease.
  */
 typedef struct {
+    double attract_pow_scaler;       /**< Power scaling factor for host attractiveness */
     double detection_prob_cattle;  /**< Daily probability of detecting an infected cow */
     double detection_prob_sheep;   /**< Daily probability of detecting an infected sheep */
     double diffusion_length_scale; /**< Length scale for midge diffusion (metres) */
+    double diff_mult_scaler;          /**< Scalar to adjust diffusion rates */
     int num_inf_stages_sheep;      /**< Erlang stages for sheep infectious period */
     int num_inf_stages_cattle;     /**< Erlang stages for cattle infectious period */
     int num_eip_stages;            /**< Stages for extrinsic incubation period */
     double p_v;                    /**< Probability of vector infection per bite on infectious host */
     double p_h;                    /**< Probability of host infection per bite from infectious vector */
-    double sheep_mort_rate;        /**< Daily mortality rate for infected sheep */
+    double preference_for_sheep;   /**< Relative preference of midges for biting sheep vs cattle */
+    double rain_grid_width;     /**< Grid cell width for rainfall data (metres) */
     double rec_rate_sheep;         /**< Recovery rate for sheep (per day) */
     double rec_rate_cattle;        /**< Recovery rate for cattle (per day) */
+    double transmission_scalar;        /**< Scalar to adjust overall transmission intensity */
 } EpiParams;
 
 /**
