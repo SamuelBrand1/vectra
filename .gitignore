@@ -43,3 +43,4 @@
 
 # Doxygen generated output
 docs/
+.vscode/c_cpp_properties.json
