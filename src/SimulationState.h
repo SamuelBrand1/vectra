@@ -39,8 +39,8 @@ typedef struct {
     int id;
 
     /* Location */
-    double x[2];              /**< Coordinates in BNG (easting, northing) in metres */
-    double county_number;     /**< CPH county number */
+    double x[2];          /**< Coordinates in BNG (easting, northing) in metres */
+    double county_number; /**< CPH county number */
 
     /* Grid cell indices for this farm */
     int temp_grid_x;
@@ -77,8 +77,8 @@ typedef struct {
     double r_cattle;
 
     /* Transmission */
-    double rel_local_weight;  /**< Relative attractiveness weight among local farms */
-    double force;             /**< Force of infection on this farm */
+    double rel_local_weight; /**< Relative attractiveness weight among local farms */
+    double force;            /**< Force of infection on this farm */
 
     /* Control status */
     bool detected;
@@ -109,8 +109,8 @@ typedef struct {
  */
 typedef struct {
     /* Time */
-    int simulation_day;       /**< Days elapsed since simulation start */
-    int day_of_year;          /**< Current Julian day (1-365) */
+    int simulation_day; /**< Days elapsed since simulation start */
+    int day_of_year;    /**< Current Julian day (1-365) */
 
     /* Farms */
     Farm farms[MAX_FARMS];
@@ -129,10 +129,10 @@ typedef struct {
     double ac_grid[MAX_GRID_S][MAX_GRID_E];
 
     /* Movement network (sparse edge list) */
-    int num_movement_links;                        /**< Total number of directed links */
-    int movement_from[MAX_MOVEMENT_LINKS];         /**< Source farm ID for each link */
-    int movement_to[MAX_MOVEMENT_LINKS];           /**< Destination farm ID for each link */
-    double movement_risk[MAX_MOVEMENT_LINKS];      /**< Daily probability of movement for each link */
+    int num_movement_links;                   /**< Total number of directed links */
+    int movement_from[MAX_MOVEMENT_LINKS];    /**< Source farm ID for each link */
+    int movement_to[MAX_MOVEMENT_LINKS];      /**< Destination farm ID for each link */
+    double movement_risk[MAX_MOVEMENT_LINKS]; /**< Daily probability of movement for each link */
 
     /* Daily counters (reset each day) */
     int num_farms_detected_today;

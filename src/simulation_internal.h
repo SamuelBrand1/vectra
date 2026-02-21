@@ -44,14 +44,12 @@ static inline double num_sheep(const Farm *f, int num_stages) {
     return f->s_sheep + num_inf_sheep(f, num_stages) + f->r_sheep;
 }
 
-static inline double eff_num_animals(const Farm *f, double pref,
-                                     int inf_stages_cattle,
+static inline double eff_num_animals(const Farm *f, double pref, int inf_stages_cattle,
                                      int inf_stages_sheep) {
     return num_cattle(f, inf_stages_cattle) + pref * num_sheep(f, inf_stages_sheep);
 }
 
-static inline double eff_num_inf_animals(const Farm *f, double pref,
-                                         int inf_stages_cattle,
+static inline double eff_num_inf_animals(const Farm *f, double pref, int inf_stages_cattle,
                                          int inf_stages_sheep) {
     double sum = 0.0;
     for (int i = 0; i < inf_stages_cattle; i++) {

@@ -15,35 +15,35 @@
  * @brief Parameters controlling the simulation run.
  */
 typedef struct {
-    double dt;                 /**< Timestep for midge dynamics (days) */
-    double dt_farm;            /**< Timestep for farm-level dynamics (days) */
-    double initial_density_inf_midges;     /**< Initial density of infectious midges at seed location */
+    double dt;                         /**< Timestep for midge dynamics (days) */
+    double dt_farm;                    /**< Timestep for farm-level dynamics (days) */
+    double initial_density_inf_midges; /**< Initial density of infectious midges at seed location */
     double initial_width_from_central_site; /**< Spatial extent of initial seeding (metres) */
-    double outbreak_county;                /**< County number where the outbreak is seeded */
-    int num_days;              /**< Total number of days to simulate */
-    int num_reps;              /**< Number of Monte Carlo repetitions */
-    int start_day_of_year;     /**< Julian day to start (1-365) */
+    double outbreak_county;                 /**< County number where the outbreak is seeded */
+    int num_days;                           /**< Total number of days to simulate */
+    int num_reps;                           /**< Number of Monte Carlo repetitions */
+    int start_day_of_year;                  /**< Julian day to start (1-365) */
 } SimulationParams;
 
 /**
  * @brief Epidemiological parameters for BTV transmission and disease.
  */
 typedef struct {
-    double attract_pow_scaler;       /**< Power scaling factor for host attractiveness */
+    double attract_pow_scaler;     /**< Power scaling factor for host attractiveness */
     double detection_prob_cattle;  /**< Daily probability of detecting an infected cow */
     double detection_prob_sheep;   /**< Daily probability of detecting an infected sheep */
     double diffusion_length_scale; /**< Length scale for midge diffusion (metres) */
-    double diff_mult_scaler;          /**< Scalar to adjust diffusion rates */
+    double diff_mult_scaler;       /**< Scalar to adjust diffusion rates */
     int num_inf_stages_sheep;      /**< Erlang stages for sheep infectious period */
     int num_inf_stages_cattle;     /**< Erlang stages for cattle infectious period */
     int num_eip_stages;            /**< Stages for extrinsic incubation period */
-    double p_v;                    /**< Probability of vector infection per bite on infectious host */
-    double p_h;                    /**< Probability of host infection per bite from infectious vector */
-    double preference_for_sheep;   /**< Relative preference of midges for biting sheep vs cattle */
-    double rain_grid_width;     /**< Grid cell width for rainfall data (metres) */
-    double rec_rate_sheep;         /**< Recovery rate for sheep (per day) */
-    double rec_rate_cattle;        /**< Recovery rate for cattle (per day) */
-    double transmission_scalar;        /**< Scalar to adjust overall transmission intensity */
+    double p_v; /**< Probability of vector infection per bite on infectious host */
+    double p_h; /**< Probability of host infection per bite from infectious vector */
+    double preference_for_sheep; /**< Relative preference of midges for biting sheep vs cattle */
+    double rain_grid_width;      /**< Grid cell width for rainfall data (metres) */
+    double rec_rate_sheep;       /**< Recovery rate for sheep (per day) */
+    double rec_rate_cattle;      /**< Recovery rate for cattle (per day) */
+    double transmission_scalar;  /**< Scalar to adjust overall transmission intensity */
 } EpiParams;
 
 /**

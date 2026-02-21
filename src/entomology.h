@@ -18,10 +18,10 @@ typedef double (*RateFunction)(double temperature);
  * @brief Defines a vector species via its temperature-dependent rate functions.
  */
 typedef struct {
-    const char *name;              /**< Species name for logging */
-    RateFunction biting_rate;      /**< Biting rate per day as f(T) */
-    RateFunction mortality_rate;   /**< Daily mortality rate as f(T) */
-    RateFunction incubation_rate;  /**< EIP progression rate as f(T) */
+    const char *name;             /**< Species name for logging */
+    RateFunction biting_rate;     /**< Biting rate per day as f(T) */
+    RateFunction mortality_rate;  /**< Daily mortality rate as f(T) */
+    RateFunction incubation_rate; /**< EIP progression rate as f(T) */
 } VectorSpecies;
 
 /* ------------------------------------------------------------------ */
