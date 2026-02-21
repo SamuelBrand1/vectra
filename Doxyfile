@@ -1,0 +1,29 @@
+# Doxyfile for VECTRA BTV simulation model
+
+PROJECT_NAME           = "VECTRA"
+PROJECT_BRIEF          = "Vector-borne disease transmission model with temperature dependence"
+OUTPUT_DIRECTORY       = docs
+INPUT                  = src
+RECURSIVE              = YES
+FILE_PATTERNS          = *.h *.cpp *.c
+
+# Extract documentation even from undocumented members
+EXTRACT_ALL            = YES
+
+# Generate HTML only (no LaTeX)
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
+
+# Theme: doxygen-awesome-css
+HTML_EXTRA_STYLESHEET  = docs-theme/doxygen-awesome.css
+HTML_COLORSTYLE        = TOGGLE
+GENERATE_TREEVIEW      = YES
+DISABLE_INDEX          = NO
+FULL_SIDEBAR           = NO
+HAVE_DOT               = NO
+OPTIMIZE_OUTPUT_FOR_C  = YES
+TYPEDEF_HIDES_STRUCT   = YES
+
+# Source browsing
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = NO
