@@ -38,14 +38,15 @@
  * @param state   Mutable simulation state
  * @param sim     Simulation run parameters (timesteps, etc.)
  * @param epi     Epidemiological parameters
+ * @param mov     Movement parameters (shipment size distributions)
  * @param ctrl    Control measure parameters
  * @param grids   Spatial grid parameters
  * @param species Vector species (temperature-dependent rate functions)
  * @param rng     GSL random number generator
  */
 void simulate_day(SimulationState *state, const SimulationParams *sim, const EpiParams *epi,
-                  const ControlParams *ctrl, const GridParams *grids, const VectorSpecies *species,
-                  gsl_rng *rng);
+                  const MovementParams *mov, const ControlParams *ctrl, const GridParams *grids,
+                  const VectorSpecies *species, gsl_rng *rng);
 
 /* ------------------------------------------------------------------ */
 /*  Grid-level steps                                                   */
@@ -94,11 +95,12 @@ void midge_diffusion_for_day(SimulationState *state, const SimulationParams *sim
  *
  * @param state Mutable simulation state (farms, movement network, counters)
  * @param epi   Epidemiological parameters (num_inf_stages)
+ * @param mov   Movement parameters (shipment size distributions)
  * @param ctrl  Control parameters (for movement ban checks)
  * @param rng   GSL random number generator
  */
-void movement_transmission(SimulationState *state, const EpiParams *epi, const ControlParams *ctrl,
-                           gsl_rng *rng);
+void movement_transmission(SimulationState *state, const EpiParams *epi, const MovementParams *mov,
+                           const ControlParams *ctrl, gsl_rng *rng);
 
 /**
  * @brief Check outbreak detection flags and apply control measures.

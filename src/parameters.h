@@ -62,6 +62,19 @@ typedef struct {
 } ControlParams;
 
 /**
+ * @brief Parameters for livestock movement and shipment size distributions.
+ *
+ * Shipment sizes are drawn from NegBin(size_k, size_p) + 1.
+ * Fitted to APHA movement data.
+ */
+typedef struct {
+    double cattle_shipment_size_k; /**< NegBin dispersion for cattle shipment size */
+    double cattle_shipment_size_p; /**< NegBin probability for cattle shipment size */
+    double sheep_shipment_size_k;  /**< NegBin dispersion for sheep shipment size */
+    double sheep_shipment_size_p;  /**< NegBin probability for sheep shipment size */
+} MovementParams;
+
+/**
  * @brief Parameters defining the spatial grid resolutions.
  */
 typedef struct {

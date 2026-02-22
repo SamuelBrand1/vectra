@@ -13,8 +13,8 @@
 #include "simulation.h"
 
 void simulate_day(SimulationState *state, const SimulationParams *sim, const EpiParams *epi,
-                  const ControlParams *ctrl, const GridParams *grids, const VectorSpecies *species,
-                  gsl_rng *rng) {
+                  const MovementParams *mov, const ControlParams *ctrl, const GridParams *grids,
+                  const VectorSpecies *species, gsl_rng *rng) {
     /* Reset daily counters */
     state->num_farms_detected_today = 0;
     state->num_sheep_infected_today = 0;
@@ -31,7 +31,7 @@ void simulate_day(SimulationState *state, const SimulationParams *sim, const Epi
     midge_diffusion_for_day(state, sim, epi, grids);
 
     /* 4. Livestock movement transmission */
-    movement_transmission(state, epi, ctrl, rng);
+    movement_transmission(state, epi, mov, ctrl, rng);
 
     /* 5. Per-farm epidemic updates */
     for (int k = 0; k < state->num_farms; k++) {
